@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <pre id="app"></pre>
+    <pre id="inline"></pre>
+    <pre id="alias"></pre>
+    <script type="module" src="/src/main.ts"></script>
+
+<script type="module">
+const rawModules = import.meta.globEager('./*.json', { as: 'raw' })
+const globraw = {}
+Object.keys(rawModules).forEach((key) => {
+  globraw[key] = JSON.parse(rawModules[key])
+})
+document.getElementById('inline').textContent = JSON.stringify(globraw, null, 2)
+
+const aliased = import.meta.glob('~/fixtures/*.*', { eager: true })
+document.getElementById('alias').textContent = JSON.stringify(aliased, null, 2)
+</script>
+
+  </body>
+</html>

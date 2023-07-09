@@ -1,0 +1,81 @@
+{
+  "name": "vite-plugin-dirs",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.2",
+  "description": "A vite plugin to get the names of all files in a specified directory",
+  "author": "Amihhs<amihhs369@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/amihhs",
+  "homepage": "https://github.com/amihhs/vite-plugin-dirs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amihhs/vite-plugin-dirs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amihhs/vite-plugin-dirs/issues"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "vite-plugin-dirs",
+    "vite-plugin-directory",
+    "vite-plugin-folders"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    },
+    "./takeover": {
+      "types": "./takeover.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.ts"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "play": "vite playground",
+    "prepublishOnly": "nr build",
+    "release": "bumpp --commit --push --tag && pnpm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "acorn": "^8.10.0",
+    "fast-glob": "^3.3.0",
+    "magic-string": "^0.30.1",
+    "micromatch": "^4.0.5",
+    "ufo": "^1.1.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.7",
+    "@babel/types": "^7.22.5",
+    "@types/estree": "^1.0.1",
+    "@types/micromatch": "^4.0.2",
+    "@types/node": "^20.4.1",
+    "bumpp": "^9.1.1",
+    "c8": "^8.0.0",
+    "eslint": "^8.44.0",
+    "esno": "^0.16.3",
+    "jiti": "^1.19.1",
+    "pnpm": "^8.6.6",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.26.2",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "vite": "^4.4.2",
+    "vitest": "^0.33.0"
+  }
+}
