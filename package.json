@@ -46,7 +46,6 @@
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "play": "vite playground",
-    "prepublishOnly": "nr build",
     "release": "bumpp",
     "start": "esno src/index.ts",
     "test": "vitest",
