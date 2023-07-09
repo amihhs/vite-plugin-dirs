@@ -50,7 +50,8 @@
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "acorn": "^8.10.0",
@@ -62,6 +63,9 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",
     "@babel/types": "^7.22.5",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/types": "^17.4.4",
     "@types/estree": "^1.0.1",
     "@types/micromatch": "^4.0.2",
     "@types/node": "^20.4.1",
@@ -69,7 +73,9 @@
     "c8": "^8.0.0",
     "eslint": "^8.44.0",
     "esno": "^0.16.3",
+    "husky": "^8.0.3",
     "jiti": "^1.19.1",
+    "lint-staged": "^13.2.3",
     "pnpm": "^8.6.6",
     "rimraf": "^5.0.1",
     "rollup": "^3.26.2",
@@ -77,5 +83,8 @@
     "unbuild": "^1.2.1",
     "vite": "^4.4.2",
     "vitest": "^0.33.0"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json,yml}": "eslint --fix"
   }
 }
