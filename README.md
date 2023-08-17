@@ -23,14 +23,8 @@ const settled = {
       type: 'dir',
       children: [
         {
-          name: 'test',
-          type: 'dir',
-          children: [
-            {
-              name: '1.ts',
-              type: 'file'
-            }
-          ]
+          name: '1.ts',
+          type: 'file'
         }
       ]
     }
