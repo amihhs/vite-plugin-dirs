@@ -2,7 +2,7 @@ import { posix } from 'node:path'
 import type { ModuleNode, Plugin, ResolvedConfig, ViteDevServer } from 'vite'
 import MagicString from 'magic-string'
 import mm from 'micromatch'
-import type { DirsOptions, ParsedImportDirs } from '../types'
+import type { DirsOptions, ParsedImportDirs } from './types'
 import { parsedImportDirs } from './analyze'
 import { filterExhaustive, isVirtualModule, toPosixPath } from './shared'
 

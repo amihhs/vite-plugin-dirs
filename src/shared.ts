@@ -1,5 +1,5 @@
 import { posix } from 'node:path'
-import type { DirMap, DirsOptions } from '../types'
+import type { DirMap, DirsOptions } from './types'
 
 export const importDirsRE = /\bimport\.meta\.(dirs)(?:<\w+>)?\s*\(/g
 

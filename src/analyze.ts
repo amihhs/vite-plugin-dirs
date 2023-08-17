@@ -2,7 +2,7 @@ import { posix } from 'node:path'
 import { lstatSync, readdirSync } from 'node:fs'
 import type { ArrayExpression, CallExpression, Literal, Node, SequenceExpression } from 'estree'
 import { parseExpressionAt } from 'acorn'
-import type { DirMap, GeneralDirsOptions, ParsedImportDirs } from '../types'
+import type { DirMap, GeneralDirsOptions, ParsedImportDirs } from './types'
 import { importDirsRE, invalidGlobImportSyntaxError, knownOptions, toAbsolutePath } from './shared'
 
 const { basename, join } = posix

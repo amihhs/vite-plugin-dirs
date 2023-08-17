@@ -2,7 +2,6 @@
 
 > A vite plugin to get the names of all files in a specified directory
 
-
 ```ts
 const settled = import.meta.dirs('/src', { exhaustive: true })
 
@@ -59,6 +58,19 @@ export default defineConfig({
 })
 ```
 
+## Client Types
+
+add vite-plugin-dirs/client to compilerOptions.types of your tsconfig:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vite-plugin-dirs/client"]
+  }
+}
+
+```
+  
 ## Options
 
 ```ts

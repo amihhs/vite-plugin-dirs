@@ -1,3 +1,3 @@
 interface ImportMeta {
-  dirs: import('./types').MetaDirsFunction
+  dirs: import('./src/types').MetaDirsFunction
 }
