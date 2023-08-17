@@ -73,7 +73,6 @@ export async function parsedImportDirs(
     const end = ast.range![1]
     const resolvedDirs = await Promise.all(dirs.map(d => toAbsolutePath(d, root, dir ?? root, resolveId)))
     const maps = await generateDirsMaps(resolvedDirs)
-    // console.log('map', JSON.stringify(map))
     return {
       firstArgType: type,
       start,
@@ -147,7 +146,6 @@ function analyzeSecondArgument(arg2: Node | undefined, err: (msg: string) => Err
 
 async function generateDirsMaps(dirs: string[]): Promise<DirMap[]> {
   const dirsDetail: DirMap[] = []
-
   for (const dir of dirs) {
     const files = readdirSync(dir)
     const fileDetails: DirMap[] = []
@@ -155,7 +153,7 @@ async function generateDirsMaps(dirs: string[]): Promise<DirMap[]> {
       const stat = lstatSync(join(dir, i))
       if (stat.isDirectory()) {
         const children = await generateDirsMaps([join(dir, i)])
-        fileDetails.push({ name: basename(i), type: 'dir', children })
+        fileDetails.push({ name: basename(i), type: 'dir', children: children[0].children })
       }
       else {
         fileDetails.push({ name: basename(i), type: 'file' })

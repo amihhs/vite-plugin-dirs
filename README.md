@@ -65,7 +65,9 @@ add vite-plugin-dirs/client to compilerOptions.types of your tsconfig:
 ```json
 {
   "compilerOptions": {
-    "types": ["vite-plugin-dirs/client"]
+    "types": [
+      "vite-plugin-dirs/client"
+      ]
   }
 }
 
