@@ -1,5 +1,9 @@
-# vite-plugin-dirs [![npm](https://img.shields.io/npm/v/vite-plugin-dirs.svg)](https://npmjs.com/package/vite-plugin-dirs)
+# vite-plugin-dirs
 
+[![npm](https://img.shields.io/npm/v/vite-plugin-dirs.svg)](https://npmjs.com/package/vite-plugin-dirs)
+![npm](https://img.shields.io/npm/dm/vite-plugin-dirs)
+
+****
 > A vite plugin to get the names of all files in a specified directory
 
 ```ts
